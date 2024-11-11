@@ -1,11 +1,12 @@
 # CSE4063 Data Mining Project#1
 
-### Step 1: Dataset Selection and Approval (Due: As soon as possible)
+### Step 1: Dataset Selection and Approval (Due: As soon as possible) ✅
 - **Research:** Explore Kaggle, UCI Machine Learning Repository, or other reliable sources to find a dataset with interesting classification tasks and enough complexity for a thorough analysis.
 - **Dataset Details:** Make sure it has sufficient rows and columns for training and testing but is manageable within the time constraints.
 - **Approval:** Email your instructor (agaoglum@gmail.com) to get approval for the dataset.
+- **Approved Dataset:** [Dataset#5](https://archive.ics.uci.edu/dataset/911/recipe+reviews+and+user+feedback+dataset)
 
-### Step 2: Python Environment Setup
+### Step 2: Python Environment Setup ✅
 - **Install Python:** Ensure everyone has Python installed (Anaconda or Jupyter Notebooks could be helpful).
 - **Libraries:** Install necessary libraries (e.g., pandas, numpy, scikit-learn, matplotlib, seaborn, tensorflow or keras for neural networks).
 - **Collaborative Platform:** Set up a shared platform (e.g., GitHub) for collaboration and version control.
