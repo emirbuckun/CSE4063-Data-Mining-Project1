@@ -10,6 +10,10 @@
 - **Install Python:** Ensure everyone has Python installed (Anaconda or Jupyter Notebooks could be helpful).
 - **Libraries:** Install necessary libraries (e.g., pandas, numpy, scikit-learn, matplotlib, seaborn, tensorflow or keras for neural networks).
 - **Collaborative Platform:** Set up a shared platform (e.g., GitHub) for collaboration and version control.
+- **Environment Details:**
+  - Python Version: Python 3.13.0
+  - Pip Version: pip 24.3.1
+  - [Dataset#5](https://archive.ics.uci.edu/dataset/911/recipe+reviews+and+user+feedback+dataset) imported!
 
 ### Step 3: Data Preprocessing
 - **Data Cleaning:** Handle any missing values, irrelevant columns, or noisy data.
