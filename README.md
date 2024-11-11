@@ -1,6 +1,4 @@
-# CSE4063 Data Mining Projects
-
-## Project#1
+# CSE4063 Data Mining Project#1
 
 ### Step 1: Dataset Selection and Approval (Due: As soon as possible)
 - **Research:** Explore Kaggle, UCI Machine Learning Repository, or other reliable sources to find a dataset with interesting classification tasks and enough complexity for a thorough analysis.
