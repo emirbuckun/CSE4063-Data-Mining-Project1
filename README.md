@@ -2,7 +2,7 @@
 
 ## How to Run
 
-1. Ensure you have all the required dependencies installed. You can install them using:
+1. Ensure you have the dataset file named "recipe_dataset.csv" in "data/" directory and all the required dependencies installed. You can install them using:
 
    ```sh
    pip install -r requirements.txt
@@ -16,14 +16,30 @@
 
 3. Follow the on-screen instructions to proceed through the model training and evaluation steps.
 
-### Step 1: Dataset Selection and Approval (Due: As soon as possible) ✅
+## Folder Structure
+
+```
+CSE4063-Data-Mining-Project1/
+├── data/                # Contains the dataset files (ignored by git since its size is large)
+│   ├── recipe_dataset.csv
+├── src/                 # Source code files
+│   ├── main.py          # Main script to run the project
+│   ├── preprocessing.py # Script for data preprocessing
+│   ├── models.py        # Script containing model definitions
+│   ├── evaluation.py    # Script for model evaluation
+├── .gitignore           # Gitignore file
+├── requirements.txt     # List of dependencies
+└── README.md            # Project overview and instructions
+```
+
+### Step 1: Dataset Selection and Approval (Due: As soon as possible)
 
 - **Research:** Explore Kaggle, UCI Machine Learning Repository, or other reliable sources to find a dataset with interesting classification tasks and enough complexity for a thorough analysis.
 - **Dataset Details:** Make sure it has sufficient rows and columns for training and testing but is manageable within the time constraints.
 - **Approval:** Email your instructor (agaoglum@gmail.com) to get approval for the dataset.
-- **Approved Dataset:** [Dataset#5](https://archive.ics.uci.edu/dataset/911/recipe+reviews+and+user+feedback+dataset)
+- **Approved Dataset:** [Recipe Dataset](https://archive.ics.uci.edu/dataset/911/recipe+reviews+and+user+feedback+dataset)
 
-### Step 2: Python Environment Setup ✅
+### Step 2: Python Environment Setup
 
 - **Install Python:** Ensure everyone has Python installed (Anaconda or Jupyter Notebooks could be helpful).
 - **Libraries:** Install necessary libraries (e.g., pandas, numpy, scikit-learn, matplotlib, seaborn, tensorflow or keras for neural networks).
@@ -31,7 +47,7 @@
 - **Environment Details:**
   - Python Version: Python 3.13.0
   - Pip Version: pip 24.3.1
-  - [Dataset#5](https://archive.ics.uci.edu/dataset/911/recipe+reviews+and+user+feedback+dataset) imported!
+  - [Recipe Dataset](https://archive.ics.uci.edu/dataset/911/recipe+reviews+and+user+feedback+dataset) imported!
 
 ### Step 3: Data Preprocessing
 
