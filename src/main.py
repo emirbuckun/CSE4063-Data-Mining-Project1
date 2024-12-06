@@ -10,7 +10,7 @@ def main():
     try:
         # Load the dataset
         print("Loading dataset...")
-        data = pd.read_csv('dataset5.csv')
+        data = pd.read_csv('data/dataset5.csv')
         
         # Separate features and target variable
         features = [

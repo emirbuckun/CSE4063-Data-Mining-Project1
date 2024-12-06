@@ -11,7 +11,7 @@
 2. Run the main script:
 
    ```sh
-   python main.py
+   python src/main.py
    ```
 
 3. Follow the on-screen instructions to proceed through the model training and evaluation steps.
