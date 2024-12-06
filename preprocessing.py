@@ -1,66 +1,62 @@
-import pandas as pd
-import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler
 from sklearn.feature_extraction.text import TfidfVectorizer
-from scipy import sparse  # Bu satırı ekledik
+from scipy import sparse
 from scipy.sparse import hstack
-import warnings
-warnings.filterwarnings('ignore')
 
 def load_and_explore_data(X, y):
-    """Veri setini yükle ve keşifsel analiz yap"""
-    print("\n=== Veri Seti Analizi ===")
-    print(f"Veri seti boyutu: {X.shape}")
-    print("\nÖzellikler:")
+    """Load and explore the dataset"""
+    print("\n=== Dataset Analysis ===")
+    print(f"Dataset size: {X.shape}")
+    print("\nFeatures:")
     print(X.info())
-    print("\nEksik değerler:")
+    print("\nMissing values:")
     print(X.isnull().sum())
-    print("\nHedef değişken (yıldız) dağılımı:")
+    print("\nTarget variable (stars) distribution:")
     print(y.value_counts().sort_index())
-    print("\nHedef değişken istatistikleri:")
+    print("\nTarget variable statistics:")
     print(y.describe())
     return X, y
 
 def preprocess_data(X, y):
-    """Veri ön işleme"""
-    # Eksik değerleri doldur
+    """Data preprocessing"""
+    # Fill missing values
     X = X.copy()
     X['text'] = X['text'].fillna('')
     
-    # Veriyi böl
+    # Split the data
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42, stratify=y
     )
     
-    # Metin verilerini ve sayısal verileri ayrı ayrı işle
-    # TF-IDF için metin dönüşümü
+    # Process text and numeric data separately
+    # TF-IDF transformation for text data
     tfidf = TfidfVectorizer(max_features=1000)
     X_train_text = tfidf.fit_transform(X_train['text'])
     X_test_text = tfidf.transform(X_test['text'])
     
-    # Sayısal özellikler için MinMaxScaler (0-1 arasına normalize et)
+    # MinMaxScaler for numeric features (normalize between 0-1)
     numeric_features = ['user_reputation', 'reply_count', 'thumbs_up', 'thumbs_down', 'best_score']
-    scaler = MinMaxScaler()  # StandardScaler yerine MinMaxScaler kullan
+    scaler = MinMaxScaler()
     
-    # Sayısal özellikleri numpy array'e dönüştür
+    # Convert numeric features to numpy array
     X_train_num = scaler.fit_transform(X_train[numeric_features].values)
     X_test_num = scaler.transform(X_test[numeric_features].values)
     
-    # Sparse matrise dönüştür
+    # Convert to sparse matrix
     X_train_num_sparse = sparse.csr_matrix(X_train_num)
     X_test_num_sparse = sparse.csr_matrix(X_test_num)
     
-    # Metin ve sayısal özellikleri birleştir
+    # Combine text and numeric features
     X_train_processed = hstack([X_train_text, X_train_num_sparse])
     X_test_processed = hstack([X_test_text, X_test_num_sparse])
     
-    # Non-negative kontrolü
-    print("\nVeri Kontrol:")
-    print(f"Negatif değer var mı (Train): {(X_train_processed.data < 0).any()}")
-    print(f"Negatif değer var mı (Test): {(X_test_processed.data < 0).any()}")
-    print(f"Minimum değer (Train): {X_train_processed.data.min():.6f}")
-    print(f"Maximum değer (Train): {X_train_processed.data.max():.6f}")
+    # Non-negative check
+    print("\nData Check:")
+    print(f"Any negative values (Train): {(X_train_processed.data < 0).any()}")
+    print(f"Any negative values (Test): {(X_test_processed.data < 0).any()}")
+    print(f"Minimum value (Train): {X_train_processed.data.min():.6f}")
+    print(f"Maximum value (Train): {X_train_processed.data.max():.6f}")
     
     preprocessor = {
         'tfidf': tfidf,
