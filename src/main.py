@@ -4,7 +4,11 @@ from models import create_models, create_ensemble_models
 from evaluation import evaluate_model, plot_comparison
 from sklearn.model_selection import cross_val_score
 import warnings
+from logger import set_logger
 warnings.filterwarnings('ignore')
+
+# Set logger
+set_logger("logs")
 
 def main():
     try:
@@ -39,7 +43,6 @@ def main():
                 print(f"\nTraining {name}...")
                 model.fit(X_train, y_train)
                 results[name] = evaluate_model(model, X_test, y_test, name)
-                input(f"\nPress Enter to continue after viewing {name} results...")
             except Exception as e:
                 print(f"Error: An issue occurred while training the {name} model:")
                 print(str(e))
@@ -50,7 +53,6 @@ def main():
         cv_scores = cross_val_score(dt_gini, X_train, y_train, cv=5, scoring='accuracy')
         print(f"Cross-validation scores: {cv_scores}")
         print(f"Mean cross-validation score: {cv_scores.mean()}")
-        input(f"\nPress Enter to continue after viewing cross-validation results...")
         
         # Train ensemble models
         print("\nTraining ensemble models...")
@@ -60,7 +62,6 @@ def main():
                 print(f"\nTraining {name}...")
                 model.fit(X_train, y_train)
                 results[name] = evaluate_model(model, X_test, y_test, name)
-                input(f"\nPress Enter to continue after viewing {name} results...")
         except Exception as e:
             print("Error: An issue occurred while creating ensemble models:")
             print(str(e))
@@ -76,5 +77,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    print("\nProgram completed successfully. Press Enter to exit...")
-    input()
+    print("\nProgram completed successfully.")

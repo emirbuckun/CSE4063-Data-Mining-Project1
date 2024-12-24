@@ -1,0 +1,142 @@
+Loading dataset...
+
+=== Dataset Analysis ===
+Dataset size: (18182, 6)
+
+Features:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 18182 entries, 0 to 18181
+Data columns (total 6 columns):
+ #   Column           Non-Null Count  Dtype 
+---  ------           --------------  ----- 
+ 0   user_reputation  18182 non-null  int64 
+ 1   reply_count      18182 non-null  int64 
+ 2   thumbs_up        18182 non-null  int64 
+ 3   thumbs_down      18182 non-null  int64 
+ 4   best_score       18182 non-null  int64 
+ 5   text             18180 non-null  object
+dtypes: int64(5), object(1)
+memory usage: 852.4+ KB
+None
+
+Missing values:
+user_reputation    0
+reply_count        0
+thumbs_up          0
+thumbs_down        0
+best_score         0
+text               2
+dtype: int64
+
+Target variable (stars) distribution:
+stars
+0     1696
+1      280
+2      232
+3      490
+4     1655
+5    13829
+Name: count, dtype: int64
+
+Target variable statistics:
+count    18182.000000
+mean         4.288802
+std          1.544786
+min          0.000000
+25%          5.000000
+50%          5.000000
+75%          5.000000
+max          5.000000
+Name: stars, dtype: float64
+
+Preprocessing data...
+
+Data Check:
+Any negative values (Train): False
+Any negative values (Test): False
+Minimum value (Train): 0.001071
+Maximum value (Train): 1.000000
+
+Training models...
+
+Training Decision Tree (Gini)...
+
+=== Decision Tree (Gini) Results ===
+Accuracy: 0.3866
+Precision: 0.6810
+Recall: 0.3866
+F1-Score: 0.4677
+
+Training Decision Tree (Entropy)...
+
+=== Decision Tree (Entropy) Results ===
+Accuracy: 0.2802
+Precision: 0.6897
+Recall: 0.2802
+F1-Score: 0.3432
+
+Training Naive Bayes (Bernoulli)...
+
+=== Naive Bayes (Bernoulli) Results ===
+Accuracy: 0.6258
+Precision: 0.7111
+Recall: 0.6258
+F1-Score: 0.6601
+
+Training Naive Bayes (Complement)...
+
+=== Naive Bayes (Complement) Results ===
+Accuracy: 0.7190
+Precision: 0.7291
+Recall: 0.7190
+F1-Score: 0.7213
+
+Training SVM...
+
+=== SVM Results ===
+Accuracy: 0.6962
+Precision: 0.7206
+Recall: 0.6962
+F1-Score: 0.7068
+
+Training Neural Network (1 hidden layer)...
+
+=== Neural Network (1 hidden layer) Results ===
+Accuracy: 0.7773
+Precision: 0.7213
+Recall: 0.7773
+F1-Score: 0.7338
+
+Training Neural Network (2 hidden layers)...
+
+=== Neural Network (2 hidden layers) Results ===
+Accuracy: 0.7734
+Precision: 0.7137
+Recall: 0.7734
+F1-Score: 0.7297
+
+Performing cross-validation for Decision Tree (Gini)...
+Cross-validation scores: [0.31797869 0.2206944  0.21691303 0.50464077 0.19697491]
+Mean cross-validation score: 0.29144035751117225
+
+Training ensemble models...
+
+Training Bagging...
+
+=== Bagging Results ===
+Accuracy: 0.7613
+Precision: 0.7330
+Recall: 0.7613
+F1-Score: 0.6600
+
+Training Boosting...
+
+=== Boosting Results ===
+Accuracy: 0.7624
+Precision: 0.6514
+Recall: 0.7624
+F1-Score: 0.6633
+
+Comparing all models...
+
+Program completed successfully.

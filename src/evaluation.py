@@ -1,6 +1,7 @@
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
 def evaluate_model(model, X_test, y_test, model_name):
     """Evaluate model performance"""
@@ -28,7 +29,11 @@ def evaluate_model(model, X_test, y_test, model_name):
     plt.ylabel('True Label')
     plt.xlabel('Predicted Label')
     plt.tight_layout()
-    plt.show()
+    
+    # Save the plot
+    if not os.path.exists('images'):
+        os.makedirs('images')
+    plt.savefig(f'images/{model_name}_confusion_matrix.png')
     plt.close()
     
     return results
@@ -47,5 +52,9 @@ def plot_comparison(results_dict):
         plt.xticks(rotation=45)
         plt.ylabel(metric)
         plt.tight_layout()
-        plt.show()
+        
+        # Save the plot
+        if not os.path.exists('images'):
+            os.makedirs('images')
+        plt.savefig(f'images/comparison_{metric}.png')
         plt.close()
