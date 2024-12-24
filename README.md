@@ -23,13 +23,14 @@ CSE4063-Data-Mining-Project1/
 ├── data/                # Contains the dataset files (ignored by git since its size is large)
 │   ├── recipe_dataset.csv
 ├── src/                 # Source code files
-│   ├── main.py          # Main script to run the project
-│   ├── preprocessing.py # Script for data preprocessing
-│   ├── models.py        # Script containing model definitions
 │   ├── evaluation.py    # Script for model evaluation
+│   ├── logger.py        # Logger class to print outputs to console and file
+│   ├── main.py          # Main script to run the project
+│   ├── models.py        # Script containing model definitions
+│   ├── preprocessing.py # Script for data preprocessing
 ├── .gitignore           # Gitignore file
-├── requirements.txt     # List of dependencies
 └── README.md            # Project overview and instructions
+├── requirements.txt     # List of dependencies
 ```
 
 ### Step 1: Dataset Selection and Approval (Due: As soon as possible)
