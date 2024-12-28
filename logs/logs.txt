@@ -124,18 +124,18 @@ Training ensemble models...
 Training Bagging...
 
 === Bagging Results ===
-Accuracy: 0.7613
-Precision: 0.7330
-Recall: 0.7613
-F1-Score: 0.6600
+Accuracy: 0.5735
+Precision: 0.6713
+Recall: 0.5735
+F1-Score: 0.6116
 
 Training Boosting...
 
 === Boosting Results ===
-Accuracy: 0.7624
-Precision: 0.6514
-Recall: 0.7624
-F1-Score: 0.6633
+Accuracy: 0.5197
+Precision: 0.6713
+Recall: 0.5197
+F1-Score: 0.5732
 
 Comparing all models...
 

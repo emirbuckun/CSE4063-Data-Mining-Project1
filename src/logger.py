@@ -6,7 +6,7 @@ class Logger(object):
         self.terminal = sys.stdout
         if not os.path.exists('logs'):
             os.makedirs('logs')
-        self.log = open(os.path.join('logs', filename), "a")
+        self.log = open(os.path.join('logs', filename), "w")
 
     def write(self, message):
         self.terminal.write(message)
