@@ -50,11 +50,12 @@ max          5.000000
 Name: stars, dtype: float64
 
 Preprocessing data...
+Rows removed after filtering non-zero stars: 1696
 
 Data Check:
 Any negative values (Train): False
 Any negative values (Test): False
-Minimum value (Train): 0.001071
+Minimum value (Train): 0.001057
 Maximum value (Train): 1.000000
 
 Training models...
@@ -62,80 +63,80 @@ Training models...
 Training Decision Tree (Gini)...
 
 === Decision Tree (Gini) Results ===
-Accuracy: 0.3866
-Precision: 0.6810
-Recall: 0.3866
-F1-Score: 0.4677
+Accuracy: 0.5039
+Precision: 0.7894
+Recall: 0.5039
+F1-Score: 0.5928
 
 Training Decision Tree (Entropy)...
 
 === Decision Tree (Entropy) Results ===
-Accuracy: 0.2802
-Precision: 0.6897
-Recall: 0.2802
-F1-Score: 0.3432
+Accuracy: 0.6425
+Precision: 0.7650
+Recall: 0.6425
+F1-Score: 0.6948
 
 Training Naive Bayes (Bernoulli)...
 
 === Naive Bayes (Bernoulli) Results ===
-Accuracy: 0.6258
-Precision: 0.7111
-Recall: 0.6258
-F1-Score: 0.6601
+Accuracy: 0.7602
+Precision: 0.7909
+Recall: 0.7602
+F1-Score: 0.7746
 
 Training Naive Bayes (Complement)...
 
 === Naive Bayes (Complement) Results ===
-Accuracy: 0.7190
-Precision: 0.7291
-Recall: 0.7190
-F1-Score: 0.7213
+Accuracy: 0.7823
+Precision: 0.8300
+Recall: 0.7823
+F1-Score: 0.8015
 
 Training SVM...
 
 === SVM Results ===
-Accuracy: 0.6962
-Precision: 0.7206
-Recall: 0.6962
-F1-Score: 0.7068
+Accuracy: 0.7911
+Precision: 0.8181
+Recall: 0.7911
+F1-Score: 0.8032
 
 Training Neural Network (1 hidden layer)...
 
 === Neural Network (1 hidden layer) Results ===
-Accuracy: 0.7773
-Precision: 0.7213
-Recall: 0.7773
-F1-Score: 0.7338
+Accuracy: 0.8545
+Precision: 0.8035
+Recall: 0.8545
+F1-Score: 0.8143
 
 Training Neural Network (2 hidden layers)...
 
 === Neural Network (2 hidden layers) Results ===
-Accuracy: 0.7734
-Precision: 0.7137
-Recall: 0.7734
-F1-Score: 0.7297
+Accuracy: 0.8475
+Precision: 0.7878
+Recall: 0.8475
+F1-Score: 0.8084
 
 Performing cross-validation for Decision Tree (Gini)...
-Cross-validation scores: [0.31797869 0.2206944  0.21691303 0.50464077 0.19697491]
-Mean cross-validation score: 0.29144035751117225
+Cross-validation scores: [0.61144807 0.64708112 0.34268385 0.48047023 0.50777399]
+Mean cross-validation score: 0.5178914514190229
 
 Training ensemble models...
 
 Training Bagging...
 
 === Bagging Results ===
-Accuracy: 0.5735
-Precision: 0.6713
-Recall: 0.5735
-F1-Score: 0.6116
+Accuracy: 0.5931
+Precision: 0.7733
+Recall: 0.5931
+F1-Score: 0.6584
 
 Training Boosting...
 
 === Boosting Results ===
-Accuracy: 0.5197
-Precision: 0.6713
-Recall: 0.5197
-F1-Score: 0.5732
+Accuracy: 0.7223
+Precision: 0.7774
+Recall: 0.7223
+F1-Score: 0.7467
 
 Comparing all models...
 

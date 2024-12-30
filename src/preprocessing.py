@@ -20,6 +20,13 @@ def load_and_explore_data(X, y):
 
 def preprocess_data(X, y):
     """Data preprocessing"""
+    # Remove rows with 0 stars
+    non_zero_indices = y != 0
+    removed_rows = X.shape[0] - non_zero_indices.sum()
+    print(f"Rows removed after filtering non-zero stars: {removed_rows}")
+    X = X[non_zero_indices]
+    y = y[non_zero_indices]
+    
     # Fill missing values
     X = X.copy()
     X['text'] = X['text'].fillna('')
